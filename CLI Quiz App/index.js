@@ -1,5 +1,5 @@
 /** Creating data Set */
-
+let readline = require("readline-sync");
 const database = {
     data: [
         {
@@ -24,14 +24,28 @@ const database = {
             },
             correctAnswer: "a"
         },
-        question: "Is mesthod chainging possible with forEach?",
-        options: {
-            a: "Yes",
-            b: "No",
-        },
-        correctAnswer: "b"
-    }
+        {
+            question: "Is method chaining possible with forEach?",
+            options: {
+                a: "Yes",
+                b: "No",
+            },
+            correctAnswer: "b"
+        }
     ]
 };
 
-console.log(database);
+//For Correct answer 
+
+function showQuestionAndOptions() {
+    for (let i = 0; i < database.data.length; i++) {
+        console.log(`\nQ${i + 1} - ${database.data[i].question}\n`);
+        for (let key in database.data[i].options) {
+            console.log(`${key} - ${database.data[i].options[key]}`);
+        }
+        let userAnswer = readline.question("Enter your answer: ");
+        
+    }
+}
+
+showQuestionAndOptions();
