@@ -348,8 +348,8 @@ function playGame(userAnswer, correctAnswer) {
 }
 
 function showQuestionAndOptions() {
-    // Shuffling the questions to pick random ones
-    let questions = database.data.sort(() => 0.5 - Math.random()).slice(0, 5); // Pick any 5 random questions
+   
+    let questions = database.data.sort(() => 0.5 - Math.random()).slice(0, 5); 
     for (let i = 0; i < questions.length; i++) {
         console.log(`\nQ${i + 1} - ${questions[i].question}\n`);
         for (let key in questions[i].options) {
